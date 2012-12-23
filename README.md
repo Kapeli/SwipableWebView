@@ -1,6 +1,6 @@
 License:
 ==============
-* Do whatever you want with this code. I only ask that you check out [Dash](http://kapeli.com/dash), my Snippet Manager and Documentation Browser app.
+Do whatever you want with this code. I only ask that you check out [Dash](http://kapeli.com/dash), my Snippet Manager and Documentation Browser app.
 
 Swipable WebView
 ==================
