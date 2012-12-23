@@ -36,7 +36,7 @@
         if(sum < 0)
         {
             drawRect = NSMakeRect(0-(49-49*percent), self.frame.size.height/2, 49*percent, 100);
-            NSRect frame = drawRect;
+            NSRect frame = NSIntegralRect(drawRect);
             //// Semicircle Drawing
             NSBezierPath* semicirclePath = [NSBezierPath bezierPath];
             [semicirclePath moveToPoint: NSMakePoint(NSMinX(frame) + 34.65, NSMaxY(frame) - 14.64)];
@@ -50,25 +50,24 @@
             
             //// Arrow Drawing
             NSBezierPath* arrowPath = [NSBezierPath bezierPath];
-            [arrowPath moveToPoint: NSMakePoint(NSMinX(frame) + 28.07, NSMaxY(frame) - 37.93)];
-            [arrowPath curveToPoint: NSMakePoint(NSMinX(frame) + 28.07, NSMaxY(frame) - 42.17) controlPoint1: NSMakePoint(NSMinX(frame) + 29.24, NSMaxY(frame) - 39.1) controlPoint2: NSMakePoint(NSMinX(frame) + 29.24, NSMaxY(frame) - 41)];
-            [arrowPath lineToPoint: NSMakePoint(NSMinX(frame) + 23.24, NSMaxY(frame) - 47)];
-            [arrowPath lineToPoint: NSMakePoint(NSMinX(frame) + 41, NSMaxY(frame) - 47)];
-            [arrowPath curveToPoint: NSMakePoint(NSMinX(frame) + 44, NSMaxY(frame) - 50) controlPoint1: NSMakePoint(NSMinX(frame) + 42.66, NSMaxY(frame) - 47) controlPoint2: NSMakePoint(NSMinX(frame) + 44, NSMaxY(frame) - 48.34)];
-            [arrowPath curveToPoint: NSMakePoint(NSMinX(frame) + 41, NSMaxY(frame) - 53) controlPoint1: NSMakePoint(NSMinX(frame) + 44, NSMaxY(frame) - 51.66) controlPoint2: NSMakePoint(NSMinX(frame) + 42.66, NSMaxY(frame) - 53)];
-            [arrowPath lineToPoint: NSMakePoint(NSMinX(frame) + 23.24, NSMaxY(frame) - 53)];
-            [arrowPath lineToPoint: NSMakePoint(NSMinX(frame) + 28.07, NSMaxY(frame) - 57.83)];
-            [arrowPath curveToPoint: NSMakePoint(NSMinX(frame) + 28.07, NSMaxY(frame) - 62.07) controlPoint1: NSMakePoint(NSMinX(frame) + 29.24, NSMaxY(frame) - 59) controlPoint2: NSMakePoint(NSMinX(frame) + 29.24, NSMaxY(frame) - 60.9)];
-            [arrowPath curveToPoint: NSMakePoint(NSMinX(frame) + 23.83, NSMaxY(frame) - 62.07) controlPoint1: NSMakePoint(NSMinX(frame) + 26.9, NSMaxY(frame) - 63.24) controlPoint2: NSMakePoint(NSMinX(frame) + 25, NSMaxY(frame) - 63.24)];
-            [arrowPath lineToPoint: NSMakePoint(NSMinX(frame) + 13.93, NSMaxY(frame) - 52.17)];
-            [arrowPath curveToPoint: NSMakePoint(NSMinX(frame) + 13, NSMaxY(frame) - 50) controlPoint1: NSMakePoint(NSMinX(frame) + 13.35, NSMaxY(frame) - 51.6) controlPoint2: NSMakePoint(NSMinX(frame) + 13, NSMaxY(frame) - 50.84)];
-            [arrowPath curveToPoint: NSMakePoint(NSMinX(frame) + 13.9, NSMaxY(frame) - 47.85) controlPoint1: NSMakePoint(NSMinX(frame) + 13, NSMaxY(frame) - 49.16) controlPoint2: NSMakePoint(NSMinX(frame) + 13.35, NSMaxY(frame) - 48.4)];
-            [arrowPath lineToPoint: NSMakePoint(NSMinX(frame) + 23.83, NSMaxY(frame) - 37.93)];
-            [arrowPath curveToPoint: NSMakePoint(NSMinX(frame) + 28.07, NSMaxY(frame) - 37.93) controlPoint1: NSMakePoint(NSMinX(frame) + 25, NSMaxY(frame) - 36.76) controlPoint2: NSMakePoint(NSMinX(frame) + 26.9, NSMaxY(frame) - 36.76)];
+            [arrowPath moveToPoint: NSMakePoint(NSMinX(frame) + 24.07, NSMaxY(frame) - 37.93)];
+            [arrowPath curveToPoint: NSMakePoint(NSMinX(frame) + 24.07, NSMaxY(frame) - 42.17) controlPoint1: NSMakePoint(NSMinX(frame) + 25.24, NSMaxY(frame) - 39.1) controlPoint2: NSMakePoint(NSMinX(frame) + 25.24, NSMaxY(frame) - 41)];
+            [arrowPath lineToPoint: NSMakePoint(NSMinX(frame) + 19.24, NSMaxY(frame) - 47)];
+            [arrowPath lineToPoint: NSMakePoint(NSMinX(frame) + 37, NSMaxY(frame) - 47)];
+            [arrowPath curveToPoint: NSMakePoint(NSMinX(frame) + 40, NSMaxY(frame) - 50) controlPoint1: NSMakePoint(NSMinX(frame) + 38.66, NSMaxY(frame) - 47) controlPoint2: NSMakePoint(NSMinX(frame) + 40, NSMaxY(frame) - 48.34)];
+            [arrowPath curveToPoint: NSMakePoint(NSMinX(frame) + 37, NSMaxY(frame) - 53) controlPoint1: NSMakePoint(NSMinX(frame) + 40, NSMaxY(frame) - 51.66) controlPoint2: NSMakePoint(NSMinX(frame) + 38.66, NSMaxY(frame) - 53)];
+            [arrowPath lineToPoint: NSMakePoint(NSMinX(frame) + 19.24, NSMaxY(frame) - 53)];
+            [arrowPath lineToPoint: NSMakePoint(NSMinX(frame) + 24.07, NSMaxY(frame) - 57.83)];
+            [arrowPath curveToPoint: NSMakePoint(NSMinX(frame) + 24.07, NSMaxY(frame) - 62.07) controlPoint1: NSMakePoint(NSMinX(frame) + 25.24, NSMaxY(frame) - 59) controlPoint2: NSMakePoint(NSMinX(frame) + 25.24, NSMaxY(frame) - 60.9)];
+            [arrowPath curveToPoint: NSMakePoint(NSMinX(frame) + 19.83, NSMaxY(frame) - 62.07) controlPoint1: NSMakePoint(NSMinX(frame) + 22.9, NSMaxY(frame) - 63.24) controlPoint2: NSMakePoint(NSMinX(frame) + 21, NSMaxY(frame) - 63.24)];
+            [arrowPath lineToPoint: NSMakePoint(NSMinX(frame) + 9.93, NSMaxY(frame) - 52.17)];
+            [arrowPath curveToPoint: NSMakePoint(NSMinX(frame) + 9, NSMaxY(frame) - 50) controlPoint1: NSMakePoint(NSMinX(frame) + 9.35, NSMaxY(frame) - 51.6) controlPoint2: NSMakePoint(NSMinX(frame) + 9, NSMaxY(frame) - 50.84)];
+            [arrowPath curveToPoint: NSMakePoint(NSMinX(frame) + 9.9, NSMaxY(frame) - 47.85) controlPoint1: NSMakePoint(NSMinX(frame) + 9, NSMaxY(frame) - 49.16) controlPoint2: NSMakePoint(NSMinX(frame) + 9.35, NSMaxY(frame) - 48.4)];
+            [arrowPath lineToPoint: NSMakePoint(NSMinX(frame) + 19.83, NSMaxY(frame) - 37.93)];
+            [arrowPath curveToPoint: NSMakePoint(NSMinX(frame) + 24.07, NSMaxY(frame) - 37.93) controlPoint1: NSMakePoint(NSMinX(frame) + 21, NSMaxY(frame) - 36.76) controlPoint2: NSMakePoint(NSMinX(frame) + 22.9, NSMaxY(frame) - 36.76)];
             [arrowPath closePath];
             [[NSColor whiteColor] setFill];
-            [arrowPath fill];
-        }
+            [arrowPath fill];        }
         else
         {
             drawRect = NSMakeRect(self.frame.size.width-(49*percent), self.frame.size.height/2, 49*percent, 100);
@@ -87,21 +86,21 @@
             
             //// Arrow Drawing
             NSBezierPath* arrowPath = [NSBezierPath bezierPath];
-            [arrowPath moveToPoint: NSMakePoint(NSMinX(frame) + 23.93, NSMaxY(frame) - 37.93)];
-            [arrowPath curveToPoint: NSMakePoint(NSMinX(frame) + 23.93, NSMaxY(frame) - 42.17) controlPoint1: NSMakePoint(NSMinX(frame) + 22.76, NSMaxY(frame) - 39.1) controlPoint2: NSMakePoint(NSMinX(frame) + 22.76, NSMaxY(frame) - 41)];
-            [arrowPath lineToPoint: NSMakePoint(NSMinX(frame) + 28.76, NSMaxY(frame) - 47)];
-            [arrowPath lineToPoint: NSMakePoint(NSMinX(frame) + 11, NSMaxY(frame) - 47)];
-            [arrowPath curveToPoint: NSMakePoint(NSMinX(frame) + 8, NSMaxY(frame) - 50) controlPoint1: NSMakePoint(NSMinX(frame) + 9.34, NSMaxY(frame) - 47) controlPoint2: NSMakePoint(NSMinX(frame) + 8, NSMaxY(frame) - 48.34)];
-            [arrowPath curveToPoint: NSMakePoint(NSMinX(frame) + 11, NSMaxY(frame) - 53) controlPoint1: NSMakePoint(NSMinX(frame) + 8, NSMaxY(frame) - 51.66) controlPoint2: NSMakePoint(NSMinX(frame) + 9.34, NSMaxY(frame) - 53)];
-            [arrowPath lineToPoint: NSMakePoint(NSMinX(frame) + 28.76, NSMaxY(frame) - 53)];
-            [arrowPath lineToPoint: NSMakePoint(NSMinX(frame) + 23.93, NSMaxY(frame) - 57.83)];
-            [arrowPath curveToPoint: NSMakePoint(NSMinX(frame) + 23.93, NSMaxY(frame) - 62.07) controlPoint1: NSMakePoint(NSMinX(frame) + 22.76, NSMaxY(frame) - 59) controlPoint2: NSMakePoint(NSMinX(frame) + 22.76, NSMaxY(frame) - 60.9)];
-            [arrowPath curveToPoint: NSMakePoint(NSMinX(frame) + 28.17, NSMaxY(frame) - 62.07) controlPoint1: NSMakePoint(NSMinX(frame) + 25.1, NSMaxY(frame) - 63.24) controlPoint2: NSMakePoint(NSMinX(frame) + 27, NSMaxY(frame) - 63.24)];
-            [arrowPath lineToPoint: NSMakePoint(NSMinX(frame) + 38.07, NSMaxY(frame) - 52.17)];
-            [arrowPath curveToPoint: NSMakePoint(NSMinX(frame) + 39, NSMaxY(frame) - 50) controlPoint1: NSMakePoint(NSMinX(frame) + 38.65, NSMaxY(frame) - 51.6) controlPoint2: NSMakePoint(NSMinX(frame) + 39, NSMaxY(frame) - 50.84)];
-            [arrowPath curveToPoint: NSMakePoint(NSMinX(frame) + 38.1, NSMaxY(frame) - 47.85) controlPoint1: NSMakePoint(NSMinX(frame) + 39, NSMaxY(frame) - 49.16) controlPoint2: NSMakePoint(NSMinX(frame) + 38.65, NSMaxY(frame) - 48.4)];
-            [arrowPath lineToPoint: NSMakePoint(NSMinX(frame) + 28.17, NSMaxY(frame) - 37.93)];
-            [arrowPath curveToPoint: NSMakePoint(NSMinX(frame) + 23.93, NSMaxY(frame) - 37.93) controlPoint1: NSMakePoint(NSMinX(frame) + 27, NSMaxY(frame) - 36.76) controlPoint2: NSMakePoint(NSMinX(frame) + 25.1, NSMaxY(frame) - 36.76)];
+            [arrowPath moveToPoint: NSMakePoint(NSMinX(frame) + 24.93, NSMaxY(frame) - 37.93)];
+            [arrowPath curveToPoint: NSMakePoint(NSMinX(frame) + 24.93, NSMaxY(frame) - 42.17) controlPoint1: NSMakePoint(NSMinX(frame) + 23.76, NSMaxY(frame) - 39.1) controlPoint2: NSMakePoint(NSMinX(frame) + 23.76, NSMaxY(frame) - 41)];
+            [arrowPath lineToPoint: NSMakePoint(NSMinX(frame) + 29.76, NSMaxY(frame) - 47)];
+            [arrowPath lineToPoint: NSMakePoint(NSMinX(frame) + 12, NSMaxY(frame) - 47)];
+            [arrowPath curveToPoint: NSMakePoint(NSMinX(frame) + 9, NSMaxY(frame) - 50) controlPoint1: NSMakePoint(NSMinX(frame) + 10.34, NSMaxY(frame) - 47) controlPoint2: NSMakePoint(NSMinX(frame) + 9, NSMaxY(frame) - 48.34)];
+            [arrowPath curveToPoint: NSMakePoint(NSMinX(frame) + 12, NSMaxY(frame) - 53) controlPoint1: NSMakePoint(NSMinX(frame) + 9, NSMaxY(frame) - 51.66) controlPoint2: NSMakePoint(NSMinX(frame) + 10.34, NSMaxY(frame) - 53)];
+            [arrowPath lineToPoint: NSMakePoint(NSMinX(frame) + 29.76, NSMaxY(frame) - 53)];
+            [arrowPath lineToPoint: NSMakePoint(NSMinX(frame) + 24.93, NSMaxY(frame) - 57.83)];
+            [arrowPath curveToPoint: NSMakePoint(NSMinX(frame) + 24.93, NSMaxY(frame) - 62.07) controlPoint1: NSMakePoint(NSMinX(frame) + 23.76, NSMaxY(frame) - 59) controlPoint2: NSMakePoint(NSMinX(frame) + 23.76, NSMaxY(frame) - 60.9)];
+            [arrowPath curveToPoint: NSMakePoint(NSMinX(frame) + 29.17, NSMaxY(frame) - 62.07) controlPoint1: NSMakePoint(NSMinX(frame) + 26.1, NSMaxY(frame) - 63.24) controlPoint2: NSMakePoint(NSMinX(frame) + 28, NSMaxY(frame) - 63.24)];
+            [arrowPath lineToPoint: NSMakePoint(NSMinX(frame) + 39.07, NSMaxY(frame) - 52.17)];
+            [arrowPath curveToPoint: NSMakePoint(NSMinX(frame) + 40, NSMaxY(frame) - 50) controlPoint1: NSMakePoint(NSMinX(frame) + 39.65, NSMaxY(frame) - 51.6) controlPoint2: NSMakePoint(NSMinX(frame) + 40, NSMaxY(frame) - 50.84)];
+            [arrowPath curveToPoint: NSMakePoint(NSMinX(frame) + 39.1, NSMaxY(frame) - 47.85) controlPoint1: NSMakePoint(NSMinX(frame) + 40, NSMaxY(frame) - 49.16) controlPoint2: NSMakePoint(NSMinX(frame) + 39.65, NSMaxY(frame) - 48.4)];
+            [arrowPath lineToPoint: NSMakePoint(NSMinX(frame) + 29.17, NSMaxY(frame) - 37.93)];
+            [arrowPath curveToPoint: NSMakePoint(NSMinX(frame) + 24.93, NSMaxY(frame) - 37.93) controlPoint1: NSMakePoint(NSMinX(frame) + 28, NSMaxY(frame) - 36.76) controlPoint2: NSMakePoint(NSMinX(frame) + 26.1, NSMaxY(frame) - 36.76)];
             [arrowPath closePath];
             [[NSColor whiteColor] setFill];
             [arrowPath fill];
