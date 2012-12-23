@@ -1,0 +1,284 @@
+<html><head><style>body {background:#F0EFE7;color:#4E443C}a{color:#0388a6;text-decoration:none;-webkit-transition-property:color;-moz-transition-property:color;-ms-transition-property:color;-o-transition-property:color;transition-property:color;-webkit-transition-duration:0.3s;-moz-transition-duration:0.3s;-ms-transition-duration:0.3s;-o-transition-duration:0.3s;transition-duration:0.3s}a:hover{color:#04b1d8}</style></head><body><BR><BR><h1><center>Swipe left or right with two fingers.</h1></center><BR><BR><pre><font style='font-size:12px; font-family: "Menlo", Courier;'><div style='color:#9A9994;text-align:center; margin-bottom:6px;'><b>man(1)                                                                  man(1)</b></div><div style='text-align:center'><div style='text-align:left;background-color:#fcfcfa;border:solid 1px #e2e0d8;-webkit-border-radius:5px;border-radius:5px;padding:22px; padding-top:9px; display:inline-block;'><a name="NAME"></a><span style='font-size:16px; line-height:35px; color:#F14E32; margin-top:20px;'><b>NAME</b>
+</span>
+       man - format and display the on-line manual pages
+
+<a name="SYNOPSIS"></a><span style='font-size:16px; line-height:35px; color:#F14E32; margin-top:20px;'><b>SYNOPSIS</b>
+</span>
+       <b>man</b>  [<b>-acdfFhkKtwW</b>]  [<b>--path</b>]  [<b>-m</b> <b>system</b>] [<b>-p</b> <b>string</b>] [<b>-C</b> <b>config</b><b>_<b></b>file</b>]
+       [<b>-M</b> <b>pathlist</b>] [<b>-P</b> <b>pager</b>] [<b>-B</b> <b>browser</b>] [<b>-H</b> <b>htmlpager</b>] [<b>-S</b>  <b>section</b><b>_<b></b>list</b>]
+       [<b>section</b>] <b>name</b> <b>...</b>
+<a name="DESCRIPTION"></a><span style='font-size:16px; line-height:35px; color:#F14E32; margin-top:20px;'><b>DESCRIPTION</b>
+</span>
+       <b>man</b> formats and displays the on-line manual pages.  If you specify <b>sec-</b>
+       <b>tion</b>, <b>man</b> only looks in that section of the manual.  <b>name</b>  is  normally
+       the  name of the manual page, which is typically the name of a command,
+       function, or file.  However, if <b>name</b> contains  a  slash  (<b>/</b>)  then  <b>man</b>
+       interprets  it  as a file specification, so that you can do <b>man</b> <b>./foo.5</b>
+       or even <b>man</b> <b>/cd/foo/bar.1.gz</b>.
+
+       See below for a description of where <b>man</b>  looks  for  the  manual  page
+       files.
+<a name="OPTIONS"></a><span style='font-size:16px; line-height:35px; color:#F14E32; margin-top:20px;'><b>OPTIONS</b>
+</span>
+       <b>-C</b>  <b>config_file</b>
+              Specify  the  configuration  file  to  use; the default is <b>/pri-</b>
+              <b>vate/etc/man.conf</b>.  (See <b>man.conf</b>(5).)
+
+       <b>-M</b>  <b>path</b>
+              Specify the list of directories to search for man pages.   Sepa-
+              rate  the directories with colons.  An empty list is the same as
+              not specifying <b>-M</b> at all.  See <b>SEARCH</b> <b>PATH</b> <b>FOR</b> <b>MANUAL</b> <b>PAGES</b>.
+
+       <b>-P</b>  <b>pager</b>
+              Specify which pager to use.  This option overrides the  <b>MANPAGER</b>
+              environment  variable,  which  in turn overrides the <b>PAGER</b> vari-
+              able.  By default, <b>man</b> uses <b>/usr/bin/less</b> <b>-is</b>.
+
+       <b>-B</b>     Specify which browser to use on HTML files.  This  option  over-
+              rides  the  <b>BROWSER</b>  environment  variable. By default, <b>man</b> uses
+              <b>/usr/bin/less</b>-is<b>,</b>
+
+       <b>-H</b>     Specify a command that renders HTML files as text.  This  option
+              overrides  the  <b>HTMLPAGER</b>  environment variable. By default, <b>man</b>
+              uses <b>/bin/cat</b>,
+
+       <b>-S</b>  <b>section_list</b>
+              List is a colon separated list of  manual  sections  to  search.
+              This option overrides the <b>MANSECT</b> environment variable.
+
+       <b>-a</b>     By default, <b>man</b> will exit after displaying the first manual page
+              it finds.  Using this option forces <b>man</b> to display all the  man-
+              ual pages that match <b>name,</b> not just the first.
+
+       <b>-c</b>     Reformat  the  source man page, even when an up-to-date cat page
+              exists.  This can be meaningful if the cat  page  was  formatted
+              for  a screen with a different number of columns, or if the pre-
+              formatted page is corrupted.
+
+       <b>-d</b>     Don't actually display the man  pages,  but  do  print  gobs  of
+              debugging information.
+
+       <b>-D</b>     Both display and print debugging info.
+
+       <b>-f</b>     Equivalent to <b>whatis</b>.
+
+       <b>-F</b> or <b>--preformat</b>
+              Format only - do not display.
+
+       <b>-h</b>     Print a help message and exit.
+
+       <b>-k</b>     Equivalent to <b>apropos</b>.
+
+       <b>-K</b>     Search  for  the  specified  string in *all* man pages. Warning:
+              this is probably very slow!  It  helps  to  specify  a  section.
+              (Just  to  give  a  rough idea, on my machine this takes about a
+              minute per 500 man pages.)
+
+       <b>-m</b>  <b>system</b>
+              Specify an alternate set of man pages to  search  based  on  the
+              system name given.
+
+       <b>-p</b>  <b>string</b>
+              Specify  the  sequence  of  preprocessors to run before <b>nroff</b> or
+              <b>troff</b>.  Not all installations will have a full set of preproces-
+              sors.   Some of the preprocessors and the letters used to desig-
+              nate them are: eqn (e), grap (g), pic (p), tbl (t), vgrind  (v),
+              refer  (r).   This  option  overrides the <b>MANROFFSEQ</b> environment
+              variable.
+
+       <b>-t</b>     Use <b>/usr/bin/groff</b> <b>-Tps</b> <b>-mandoc</b> <b>-c</b> to format  the  manual  page,
+              passing  the  output  to  <b>stdout.</b>   The default output format of
+              <b>/usr/bin/groff</b> <b>-Tps</b> <b>-mandoc</b> <b>-c</b> is Postscript, refer to the  man-
+              ual  page  of <b>/usr/bin/groff</b> <b>-Tps</b> <b>-mandoc</b> <b>-c</b> for ways to pick an
+              alternate format.
+
+       Depending on the selected  format  and  the  availability  of  printing
+       devices,  the  output  may  need  to  be  passed through some filter or
+       another before being printed.
+
+       <b>-w</b> or <b>--path</b>
+              Don't actually display the man pages, but  do  print  the  loca-
+              tion(s) of the files that would be formatted or displayed. If no
+              argument is given: display (on stdout) the list  of  directories
+              that  is  searched by <b>man</b> for man pages. If <b>manpath</b> is a link to
+              man, then &quot;manpath&quot; is equivalent to &quot;man --path&quot;.
+
+       <b>-W</b>     Like -w, but print file names one per line,  without  additional
+              information.   This is useful in shell commands like <b>man</b> <b>-aW</b> <b>man</b>
+              <b>|</b> <b>xargs</b> <b>ls</b> <b>-l</b>
+<a name="CAT PAGES"></a><span style='font-size:16px; line-height:35px; color:#F14E32; margin-top:20px;'><b>CAT PAGES</b>
+</span>
+       Man will try to save the formatted man pages, in order to save  format-
+       ting time the next time these pages are needed.  Traditionally, format-
+       ted versions of pages in DIR/manX are saved in DIR/catX, but other map-
+       pings   from   man   dir   to   cat  dir  can  be  specified  in  <b>/pri-</b>
+       <b>vate/etc/man.conf</b>.  No cat pages are saved when the required cat direc-
+       tory  does  not  exist.  No cat pages are saved when they are formatted
+       for a line length different from 80.   No  cat  pages  are  saved  when
+       man.conf contains the line NOCACHE.
+
+       It is possible to make <b>man</b> suid to a user man. Then, if a cat directory
+       has owner man and mode 0755 (only writable by man), and the  cat  files
+       have  owner  man  and  mode  0644 or 0444 (only writable by man, or not
+       writable at all), no ordinary user can change  the  cat  pages  or  put
+       other  files  in the cat directory. If <b>man</b> is not made suid, then a cat
+       directory should have mode 0777 if all users should be  able  to  leave
+       cat pages there.
+
+       The  option  <b>-c</b>  forces  reformatting a page, even if a recent cat page
+       exists.
+<a name="HTML PAGES"></a><span style='font-size:16px; line-height:35px; color:#F14E32; margin-top:20px;'><b>HTML PAGES</b>
+</span>
+       Man will find HTML pages if they live in directories named as  expected
+       to  be  &quot;.html&quot;, thus a valid name for an HTML version of the <b>ls</b>(1) man
+       page would be <b>/usr/share/man/htmlman1/ls.1.html</b>.
+<a name="SEARCH PATH FOR MANUAL PAGES"></a><span style='font-size:16px; line-height:35px; color:#F14E32; margin-top:20px;'><b>SEARCH PATH FOR MANUAL PAGES</b>
+</span>
+       <b>man</b> uses a sophisticated method of finding manual page files, based  on
+       the   invocation   options   and   environment   variables,  the  <b>/pri-</b>
+       <b>vate/etc/man.conf</b> configuration file, and some built in conventions and
+       heuristics.
+
+       First  of  all, when the <b>name</b> argument to <b>man</b> contains a slash (<b>/</b>), <b>man</b>
+       assumes it is a file specification itself, and there  is  no  searching
+       involved.
+
+       But in the normal case where <b>name</b> doesn't contain a slash, <b>man</b> searches
+       a variety of directories for a file that could be a manual page for the
+       topic named.
+
+       If  you  specify  the <b>-M</b> <b>pathlist</b> option, <b>pathlist</b> is a colon-separated
+       list of the directories that <b>man</b> searches.
+
+       If you don't specify <b>-M</b> but set the <b>MANPATH</b> environment  variable,  the
+       value  of  that  variable  is  the  list  of  the  directories that <b>man</b>
+       searches.
+
+       If you don't specify an explicit path list  with  <b>-M</b>  or  <b>MANPATH</b>,  <b>man</b>
+       develops  its  own path list based on the contents of the configuration
+       file <b>/private/etc/man.conf</b>.  The <b>MANPATH</b> statements in  the  configura-
+       tion  file  identify  particular  directories  to include in the search
+       path.
+
+       Furthermore, the <b>MANPATH_MAP</b> statements add to the search path  depend-
+       ing  on your command search path (i.e. your <b>PATH</b> environment variable).
+       For each directory that may be in  the  command  search  path,  a  <b>MAN-</b>
+       <b>PATH_MAP</b>  statement  specifies  a directory that should be added to the
+       search path for manual page files.  <b>man</b> looks at the <b>PATH</b> variable  and
+       adds the corresponding directories to the manual page file search path.
+       Thus, with the proper use of <b>MANPATH_MAP</b>, when you  issue  the  command
+       <b>man</b>  <b>xyz</b>,  you  get a manual page for the program that would run if you
+       issued the command <b>xyz</b>.
+
+       In addition, for each directory in the command search path (we'll  call
+       it  a  &quot;command  directory&quot;)  for  which  you do <b>not</b> have a <b>MANPATH_MAP</b>
+       statement, <b>man</b> automatically looks for a manual page directory &quot;nearby&quot;
+       namely as a subdirectory in the command directory itself or in the par-
+       ent directory of the command directory.
+
+       You can disable the automatic &quot;nearby&quot; searches by  including  a  <b>NOAU-</b>
+       <b>TOPATH</b> statement in <b>/private/etc/man.conf</b>.
+
+       In  each  directory in the search path as described above, <b>man</b> searches
+       for a file named <b>topic</b><b>.<b></b>section</b>, with an optional suffix on the  section
+       number  and  possibly  a compression suffix.  If it doesn't find such a
+       file, it then looks in any subdirectories named <b>man<b></b>N</b> or <b>cat<b></b>N</b> where <b>N</b> is
+       the  manual section number.  If the file is in a <b>cat<b></b>N</b> subdirectory, <b>man</b>
+       assumes it is a formatted manual page file (cat page).  Otherwise,  <b>man</b>
+       assumes it is unformatted.  In either case, if the filename has a known
+       compression suffix (like <b>.gz</b>), <b>man</b> assumes it is gzipped.
+
+       If you want to see where (or if) <b>man</b> would find the manual page  for  a
+       particular topic, use the <b>--path</b> (<b>-w</b>) option.
+<a name="ENVIRONMENT"></a><span style='font-size:16px; line-height:35px; color:#F14E32; margin-top:20px;'><b>ENVIRONMENT</b>
+</span>
+       <b>MANPATH</b>
+              If  <b>MANPATH</b> is set, <b>man</b> uses it as the path to search for manual
+              page files.  It overrides the configuration file and  the  auto-
+              matic  search  path,  but  is  overridden  by  the <b>-M</b> invocation
+              option.  See <b>SEARCH</b> <b>PATH</b> <b>FOR</b> <b>MANUAL</b> <b>PAGES</b>.
+
+       <b>MANPL</b>  If <b>MANPL</b> is set, its value is used as the display  page  length.
+              Otherwise, the entire man page will occupy one (long) page.
+
+       <b>MANROFFSEQ</b>
+              If  <b>MANROFFSEQ</b> is set, its value is used to determine the set of
+              preprocessors run before running <b>nroff</b> or  <b>troff</b>.   By  default,
+              pages are passed through the tbl preprocessor before <b>nroff</b>.
+
+       <b>MANSECT</b>
+              If  <b>MANSECT</b>  is set, its value is used to determine which manual
+              sections to search.
+
+       <b>MANWIDTH</b>
+              If <b>MANWIDTH</b> is set, its value is  used  as  the  width  manpages
+              should  be displayed.  Otherwise the pages may be displayed over
+              the whole width of your screen.
+
+       <b>MANPAGER</b>
+              If <b>MANPAGER</b> is set, its value is used as the name of the program
+              to  use to display the man page.  If not, then <b>PAGER</b> is used. If
+              that has no value either, <b>/usr/bin/less</b> <b>-is</b> is used.
+
+       <b>BROWSER</b>
+              The name of a browser to use for displaying HTML  manual  pages.
+              If it is not set, /usr/bin/less -is is used.
+
+       <b>HTMLPAGER</b>
+              The  command to use for rendering HTML manual pages as text.  If
+              it is not set, /bin/cat is used.
+
+       <b>LANG</b>   If <b>LANG</b> is set, its value defines the name of  the  subdirectory
+              where  man first looks for man pages. Thus, the command `LANG=dk
+              man 1 foo' will cause man to  look  for  the  foo  man  page  in
+              .../dk/man1/foo.1,  and  if  it cannot find such a file, then in
+              .../man1/foo.1, where ... is a directory on the search path.
+
+       <b>NLSPATH,</b> <b>LC_MESSAGES,</b> <b>LANG</b>
+              The environment variables <b>NLSPATH</b> and <b>LC_MESSAGES</b> (or <b>LANG</b>  when
+              the  latter  does not exist) play a role in locating the message
+              catalog.  (But the English messages are  compiled  in,  and  for
+              English no catalog is required.)  Note that programs like <b>col(1)</b>
+              called by man also use e.g. LC_CTYPE.
+
+       <b>PATH</b>   <b>PATH</b> helps determine the search path for manual page files.  See
+              <b>SEARCH</b> <b>PATH</b> <b>FOR</b> <b>MANUAL</b> <b>PAGES</b>.
+
+       <b>SYSTEM</b> <b>SYSTEM</b> is used to get the default alternate system name (for use
+              with the <b>-m</b> option).
+
+<a name="BUGS"></a><span style='font-size:16px; line-height:35px; color:#F14E32; margin-top:20px;'><b>BUGS</b>
+</span>
+       The <b>-t</b> option only works if a troff-like program is installed.
+       If you see blinking  \255  or  &lt;AD&gt;  instead  of  hyphens,  put  `LESS-
+       CHARSET=latin1' in your environment.
+
+<a name="TIPS"></a><span style='font-size:16px; line-height:35px; color:#F14E32; margin-top:20px;'><b>TIPS</b>
+</span>
+       If you add the line
+
+         (global-set-key  [(f1)]  (lambda () (interactive) (manual-entry (cur-
+       rent-word))))
+
+       to your <b>.emacs</b> file, then hitting F1 will give you the man page for the
+       library call at the current cursor position.
+
+       To  get  a  plain  text  version  of a man page, without backspaces and
+       underscores, try
+
+         # man foo | col -b &gt; foo.mantxt
+
+<a name="AUTHOR"></a><span style='font-size:16px; line-height:35px; color:#F14E32; margin-top:20px;'><b>AUTHOR</b>
+</span>
+       John W. Eaton was the  original  author  of  <b>man</b>.   Zeyd  M.  Ben-Halim
+       released  man  1.2,  and  Andries Brouwer followed up with versions 1.3
+       thru 1.5p.  Federico  Lucifredi  &lt;flucifredi@acm.org&gt;  is  the  current
+       maintainer.
+
+<a name="SEE ALSO"></a><span style='font-size:16px; line-height:35px; color:#F14E32; margin-top:20px;'><b>SEE ALSO</b>
+</span>
+       <a href="dhmanpage#apropos(1)">apropos(1)</a>, <a href="dhmanpage#whatis(1)">whatis(1)</a>, <a href="dhmanpage#less(1)">less(1)</a>, <a href="dhmanpage#groff(1)">groff(1)</a>, <a href="dhmanpage#man.conf(5)">man.conf(5)</a>.
+
+                              September 19, 2005                        <a href="dhmanpage#man(1)">man(1)</a>
+</div></div></font></pre>
+</body></html>
