@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		432DD1861688864F00FD9822 /* DHSwipeWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 432DD1851688864F00FD9822 /* DHSwipeWebView.m */; };
 		433C916916877A6800FB4B2A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 433C916816877A6800FB4B2A /* Cocoa.framework */; };
 		433C917316877A6800FB4B2A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 433C917116877A6800FB4B2A /* InfoPlist.strings */; };
 		433C917516877A6800FB4B2A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 433C917416877A6800FB4B2A /* main.m */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		432DD1841688864F00FD9822 /* DHSwipeWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHSwipeWebView.h; sourceTree = "<group>"; };
+		432DD1851688864F00FD9822 /* DHSwipeWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHSwipeWebView.m; sourceTree = "<group>"; };
 		433C916416877A6800FB4B2A /* Swipable WebView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swipable WebView.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		433C916816877A6800FB4B2A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		433C916B16877A6800FB4B2A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -93,6 +96,8 @@
 			children = (
 				433C918716877AD800FB4B2A /* DHSwipeIndicator.h */,
 				433C918816877AD800FB4B2A /* DHSwipeIndicator.m */,
+				432DD1841688864F00FD9822 /* DHSwipeWebView.h */,
+				432DD1851688864F00FD9822 /* DHSwipeWebView.m */,
 				433C917A16877A6800FB4B2A /* DHAppDelegate.h */,
 				433C917B16877A6800FB4B2A /* DHAppDelegate.m */,
 				433C918A16877BD800FB4B2A /* page.html */,
@@ -183,6 +188,7 @@
 				433C917516877A6800FB4B2A /* main.m in Sources */,
 				433C917C16877A6800FB4B2A /* DHAppDelegate.m in Sources */,
 				433C918916877AD800FB4B2A /* DHSwipeIndicator.m in Sources */,
+				432DD1861688864F00FD9822 /* DHSwipeWebView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +316,7 @@
 				433C918416877A6800FB4B2A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,19 +1,12 @@
 #import <Cocoa/Cocoa.h>
-#import <WebKit/WebKit.h>
+#import "DHSwipeWebView.h"
 
 @interface DHSwipeIndicator : NSView {
-    NSMutableDictionary *twoFingersTouches;
-    CGFloat currentSum;
-    NSTimer *drawTimer;
-    WebView *webView;
-    BOOL canGoLeft;
-    BOOL canGoRight;
+    DHSwipeWebView *webView;
 }
 
-@property (retain) NSMutableDictionary *twoFingersTouches;
-@property (retain) NSTimer *drawTimer;
-@property (retain) WebView *webView;
+@property (retain) DHSwipeWebView *webView;
 
-- (id)initWithWebView:(WebView *)aWebView;
+- (id)initWithWebView:(DHSwipeWebView *)aWebView;
 
 @end
