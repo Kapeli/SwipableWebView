@@ -107,7 +107,7 @@
         sumX *= -1;
     }
     
-    if((sumX < 0 && !canGoLeft) || (sumX > 0 && !canGoRight))
+    if(sumX == 0 || (sumX < 0 && !canGoLeft) || (sumX > 0 && !canGoRight))
     {
         if(currentSum != 0)
         {
