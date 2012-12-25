@@ -3,6 +3,7 @@
 @implementation DHSwipeIndicator
 
 @synthesize webView;
+@synthesize clipView;
 
 #define kSwipeMinimumLength 0.3
 
@@ -15,15 +16,20 @@
         [self setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
         [self setWantsLayer:YES];
         [aWebView addSubview:self];
+        id docView = [[[webView mainFrame] frameView] documentView];
+        NSScrollView *scrollView = [docView enclosingScrollView];
+        self.clipView = [[DHSwipeClipView alloc] initWithFrame:[[scrollView contentView] frame] webView:webView];
+        [scrollView setContentView:clipView];
+        [scrollView setDocumentView:docView];
     }
     return self;
 }
 
 - (void)drawRect:(NSRect)dirtyRect
 {
-    if(webView.currentSum != 0 && webView.twoFingersTouches)
+    if(clipView.currentSum != 0 && clipView.isHandlingEvent)
     {
-        CGFloat sum = webView.currentSum;
+        CGFloat sum = clipView.currentSum;
         NSRect drawRect = NSZeroRect;
         CGFloat absoluteSum = fabsf(sum);
         CGFloat percent = (absoluteSum) / kSwipeMinimumLength;

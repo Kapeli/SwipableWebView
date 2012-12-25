@@ -17,6 +17,7 @@
 		433C918616877A8C00FB4B2A /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 433C918516877A8C00FB4B2A /* WebKit.framework */; };
 		433C918916877AD800FB4B2A /* DHSwipeIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 433C918816877AD800FB4B2A /* DHSwipeIndicator.m */; };
 		433C918B16877BD800FB4B2A /* page.html in Resources */ = {isa = PBXBuildFile; fileRef = 433C918A16877BD800FB4B2A /* page.html */; };
+		4348AE1816892E2A00577451 /* DHSwipeClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4348AE1716892E2A00577451 /* DHSwipeClipView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,8 @@
 		433C918716877AD800FB4B2A /* DHSwipeIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHSwipeIndicator.h; sourceTree = "<group>"; };
 		433C918816877AD800FB4B2A /* DHSwipeIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHSwipeIndicator.m; sourceTree = "<group>"; };
 		433C918A16877BD800FB4B2A /* page.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = page.html; sourceTree = "<group>"; };
+		4348AE1616892E2A00577451 /* DHSwipeClipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHSwipeClipView.h; sourceTree = "<group>"; };
+		4348AE1716892E2A00577451 /* DHSwipeClipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHSwipeClipView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +99,8 @@
 			children = (
 				433C918716877AD800FB4B2A /* DHSwipeIndicator.h */,
 				433C918816877AD800FB4B2A /* DHSwipeIndicator.m */,
+				4348AE1616892E2A00577451 /* DHSwipeClipView.h */,
+				4348AE1716892E2A00577451 /* DHSwipeClipView.m */,
 				432DD1841688864F00FD9822 /* DHSwipeWebView.h */,
 				432DD1851688864F00FD9822 /* DHSwipeWebView.m */,
 				433C917A16877A6800FB4B2A /* DHAppDelegate.h */,
@@ -189,6 +194,7 @@
 				433C917C16877A6800FB4B2A /* DHAppDelegate.m in Sources */,
 				433C918916877AD800FB4B2A /* DHSwipeIndicator.m in Sources */,
 				432DD1861688864F00FD9822 /* DHSwipeWebView.m in Sources */,
+				4348AE1816892E2A00577451 /* DHSwipeClipView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

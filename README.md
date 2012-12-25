@@ -4,7 +4,8 @@ Do whatever you want with this code. I only ask that you check out [Dash](http:/
 
 Thanks to
 ==============
-https://github.com/oscardelben/CocoaNavigationGestures
+* https://github.com/oscardelben/CocoaNavigationGestures
+* https://github.com/kgn/LinenClipView
 
 Swipable WebView
 ==================
