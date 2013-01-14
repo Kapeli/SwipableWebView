@@ -74,7 +74,7 @@
 
 - (void)scrollWheel:(NSEvent *)event
 {
-    if(![self recognizeTwoFingerGestures] || ![NSEvent isSwipeTrackingFromScrollEventsEnabled])
+    if(![NSEvent isSwipeTrackingFromScrollEventsEnabled])
     {
         [super scrollWheel:event];
         return;
@@ -171,12 +171,6 @@
         }
     }
     [super scrollWheel:event];
-}
-
-- (BOOL)recognizeTwoFingerGestures
-{
-    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-    return [defaults boolForKey:@"AppleEnableSwipeNavigateWithScrolls"];
 }
 
 - (void)launchDrawTimer
