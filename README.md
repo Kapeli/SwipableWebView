@@ -1,7 +1,7 @@
 License
 ==============
 
-This project is release under the [MIT license](http://opensource.org/licenses/MIT)
+This project is released under the [MIT license](http://opensource.org/licenses/MIT)
 
 I only ask that you check out [Dash](http://kapeli.com/dash), my Snippet Manager and Documentation Browser app.
 
